@@ -1,0 +1,29 @@
+.header-top-01 {
+	border-bottom: 1px solid rgba($dark, 0.1);
+	.nav-link {
+        color: rgba($dark, 0.8);
+        &:hover {
+            color: $dark;
+        }
+    }
+    .navbar-transparent.navbar-light:not(.headroom--not-top) & {
+    	color: rgba($white, 0.8);
+    	border-bottom: 1px solid rgba($white, 0.1);
+        .nav-link {
+            color: rgba($white, 0.8);
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}
+
+
+.header-top-light {
+    .nav-link {
+        color: rgba($white, 0.8);
+        &:hover {
+            color: $white;
+        }
+    }
+}

@@ -1,0 +1,163 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+.h12	{font-size:12px;	line-height:22px;}
+.h13	{font-size:13px;	line-height:23px;}
+.h14	{font-size:14px;	line-height:24px;}
+.h15	{font-size:15px;	line-height:25px;}
+.h16	{font-size:16px;	line-height:26px;}
+.h17	{font-size:17px;	line-height:27px;}
+.h18	{font-size:15px;	line-height:28px;}
+.h19	{font-size:19px;	line-height:29px;}
+.h20	{font-size:20px;	line-height:30px;}
+.h21	{font-size:21px;	line-height:31px;}
+.h22	{font-size:22px;	line-height:32px;}
+.h23	{font-size:23px;	line-height:33px;}
+.h24	{font-size:24px;	line-height:34px;}
+.h25	{font-size:25px;	line-height:35px;}
+.h26	{font-size:26px;	line-height:36px;}
+.h27	{font-size:27px;	line-height:37px;}
+.h28	{font-size:28px;	line-height:38px;}
+.h29	{font-size:29px;	line-height:39px;}
+.h30	{font-size:30px;	line-height:40px;}
+.h31	{font-size:31px;	line-height:41px;}
+.h32	{font-size:32px;	line-height:42px;}
+.h33	{font-size:33px;	line-height:43px;}
+.h34	{font-size:34px;	line-height:44px;}
+.h35	{font-size:35px;	line-height:45px;}
+.h36	{font-size:36px;	line-height:46px;}
+.h37	{font-size:37px;	line-height:47px;}
+.h38	{font-size:38px;	line-height:48px;}
+.h39	{font-size:39px;	line-height:49px;}
+.h40	{font-size:40px;	line-height:50px;}
+.h41	{font-size:41px;	line-height:51px;}
+.h42	{font-size:42px;	line-height:52px;}
+.h43	{font-size:43px;	line-height:53px;}
+.h44	{font-size:44px;	line-height:54px;}
+.h45	{font-size:45px;	line-height:55px;}
+.h46	{font-size:46px;	line-height:56px;}
+.h47	{font-size:47px;	line-height:57px;}
+.h48	{font-size:48px;	line-height:58px;}
+.h49	{font-size:49px;	line-height:59px;}
+.h50	{font-size:50px;	line-height:60px;}
+.h51	{font-size:51px;	line-height:61px;}
+.h52	{font-size:52px;	line-height:62px;}
+.h53	{font-size:53px;	line-height:63px;}
+.h54	{font-size:54px;	line-height:64px;}
+.h55	{font-size:55px;	line-height:65px;}
+.h56	{font-size:56px;	line-height:66px;}
+
+
+img  {max-width:100%;}
+html, body  {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
+    font-size:14px; line-height:24px; color:#333; }
+*  {list-style:none; margin:0; word-break:keep-all; padding:0; box-sizing:border-box; word-break:keep-all; text-decoration:none; color:#333;}
+a  {text-decoration:none; color:#333;}
+a:hover  {color:#333;}
+p  {margin:0; padding:0;}
+.content_wrap  { margin:auto; }
+.search_title  {text-align:center; padding:0 0 25px; color:#fff;}
+.tbody_div > .row:nth-child(1)  {border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.tbody_div > .row  {border-bottom:1px solid #ddd; padding:10px 0; margin:0;}
+
+
+/*========================================header 상단 부분=======================================*/
+.header  {border-bottom:1px solid #ddd; display:flex; align-items:center; justify-content:space-between; padding:15px; position:fixed; top:0; left:0; width:100%; z-index:99; background:#fff;}
+.header .mypage_tab a  {padding:5px 10px;}
+.main-header  {border-bottom:1px solid #ddd;}
+
+.nav-link  {color:#333 !important;}
+
+
+
+
+
+
+/*=======================================검색 내용 부분===================================*/
+.search_box  {max-width:500px; margin:auto;}
+.search_wrap  {padding:50px 0; max-width:1200px; margin:auto;}
+.search_wrap .movie_tab  {padding:20px 15px; min-height:250px; }
+.search_wrap .movie_tab img  {width:100%; height:100%; max-height:250px; object-fit:contain; object-position:center;}
+
+
+.main_search  {height:420px;}
+.main_search > div  {padding-top:150px;}
+
+
+
+/*======================================영화 상세 부분===================================*/
+
+.contents_wrap  {padding:100px 0 50px;}
+.contents_wrap .view_wrap  {max-width:1200px; margin:auto;}
+.contents_wrap .view_wrap .tit  {box-shadow:0px 0 30px rgb(21 21 21 / 8%); background:#fff; padding:30px;}
+.contents_wrap .view_wrap .tit p.h17  {display:flex; padding:7px 0 14px; color:#666;}
+.contents_wrap .view_wrap .tit p.h17 span {max-width:120px; width:100%; display:block; font-weight:600; color:#222;}
+.contents_wrap .view_wrap .tit p.h21  {display:flex; padding:7px 0 14px; color:#666;}
+.contents_wrap .view_wrap .tit p.h21 span {max-width:120px; width:100%; display:block; font-weight:600; color:#222;}
+/*.contents_wrap .view_wrap .rating p.h17  {display:flex; padding:7px 0;}*/
+/*.contents_wrap .view_wrap .rating p.h17 span {max-width:120px; width:100%; display:block; font-weight:600; color:#222;}*/
+
+.detail_info  {max-width:1200px; margin:auto;}
+
+
+
+@media(max-width:1470px) {
+
+
+
+
+}
+
+
+@media(max-width:740px) {
+
+    .h12	{font-size:12px; line-height:22px;}
+    .h13	{font-size:12px; line-height:22px;}
+    .h14	{font-size:12px; line-height:22px;}
+    .h15	{font-size:14px; line-height:24px;}
+    .h16	{font-size:14px; line-height:24px;}
+    .h17	{font-size:14px; line-height:24px;}
+    .h18	{font-size:14px; line-height:24px;}
+    .h19	{font-size:14px; line-height:24px;}
+    .h20	{font-size:14px; line-height:24px;}
+    .h21	{font-size:16px; line-height:26px;}
+    .h22	{font-size:16px; line-height:26px;}
+    .h23	{font-size:16px; line-height:26px;}
+    .h24	{font-size:16px; line-height:26px;}
+    .h25	{font-size:16px; line-height:26px;}
+    .h26	{font-size:16px; line-height:26px;}
+    .h27	{font-size:16px; line-height:26px;}
+    .h28	{font-size:16px; line-height:26px;}
+    .h29	{font-size:16px; line-height:26px;}
+    .h30	{font-size:16px; line-height:26px;}
+    .h31	{font-size:16px; line-height:26px;}
+    .h32	{font-size:21px; line-height:31px;}
+    .h33	{font-size:21px; line-height:31px;}
+    .h34	{font-size:21px; line-height:31px;}
+    .h35	{font-size:25px; line-height:35px;}
+    .h36	{font-size:25px; line-height:35px;}
+    .h37	{font-size:25px; line-height:35px;}
+    .h38	{font-size:25px; line-height:35px;}
+    .h39	{font-size:25px; line-height:35px;}
+    .h40	{font-size:25px; line-height:35px;}
+    .h41	{font-size:25px; line-height:35px;}
+    .h42	{font-size:25px; line-height:35px;}
+    .h43	{font-size:35px; line-height:45px;}
+    .h44	{font-size:35px; line-height:45px;}
+    .h45	{font-size:35px; line-height:45px;}
+    .h46	{font-size:35px; line-height:45px;}
+    .h47	{font-size:35px; line-height:45px;}
+    .h48	{font-size:35px; line-height:45px;}
+    .h49	{font-size:35px; line-height:45px;}
+    .h50	{font-size:35px; line-height:45px;}
+    .h51	{font-size:35px; line-height:45px;}
+    .h52	{font-size:35px; line-height:45px;}
+    .h53	{font-size:35px; line-height:45px;}
+    .h54	{font-size:35px; line-height:45px;}
+    .h55	{font-size:35px; line-height:45px;}
+    .h56	{font-size:35px; line-height:45px;}
+
+
+
+}

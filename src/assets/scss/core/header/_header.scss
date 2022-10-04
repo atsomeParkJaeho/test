@@ -1,0 +1,176 @@
+// Header Fixed Effect
+.main-header {
+    transition: ease transform 0.35s, ease background 0.35s;
+    &.headroom--unpinned {
+        transform: translateY(-100%);
+    }
+    &.headroom--pinned {
+        transform: translateY(0);
+    }
+
+    &.default-fixed-header {
+        &.headroom--unpinned {
+            transform: translateY(0);
+            box-shadow: $box-shadow-sm;
+        }
+    }
+}
+
+// Header Scroll Color
+.main-header {
+    &.navbar-light {
+        &.headroom--not-top {
+            background-color: $white;
+        }
+        &.headroom--pinned.headroom--not-top {
+            box-shadow: $box-shadow-sm;
+        }
+    }
+}
+
+// Header Brand
+.navbar-dark {
+    .header-navbar-brand {
+        .logo-dark {
+            display: none;
+            .headroom--not-top & {
+                display: block;
+            }
+        }
+        .logo-light {
+            .headroom--not-top & {
+                display: none;
+            }
+        }
+    }
+}
+
+.navbar-light {
+    .header-navbar-brand {
+        .logo-light {
+            display: none;
+        }
+    }
+}
+
+// Header border
+.header-border-bottom {
+    &.navbar-dark {
+        border-bottom: 1px solid rgba($white, .05);
+    }
+}
+
+// Fixed Header Color
+.navbar-dark {
+    &.headroom--not-top {
+        background-color: $dark;
+    }
+}
+
+
+// Header Toggle
+.main-header {
+    &.header-toggle {
+        &.navbar-light:not(.navbar-transparent) {
+            background-color: $white;
+        }
+        &.navbar-dark {
+            background-color: $dark;
+        }
+    }
+}
+
+// Header Button
+.header-btn {
+    border: 1px solid $primary;
+    color: $primary;
+    background: transparent;
+    &:hover {
+        background: $primary;
+        color: $white;
+    }
+    .navbar-transparent.navbar-light:not(.headroom--not-top) & {
+        border: 1px solid $white;
+        color: $white;
+        background: transparent;
+        &:hover {
+            background: $white;
+            color: $dark;
+        }
+    }
+}
+
+
+.navbar {
+    .header-search {
+        .dropdown-toggle {
+            border: none;
+            background: none;
+            width: 40px;
+            height: 40px;
+            line-height: 1;
+            font-size: 23px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            outline: none !important;
+            &:after {
+                display: none;
+            }
+        }
+        .dropdown-menu {
+            width: 100vw;
+            right: 0;
+            left: auto;
+            margin: 0;
+            padding: 14px;
+            background: #ffff;
+            border: 1px solid #eee;
+            border-radius: 0;
+        }
+    }
+    .header-user {
+        .dropdown-toggle {
+            border: none;
+            background: none;
+            width: 40px;
+            height: 40px;
+            line-height: 1;
+            font-size: 23px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            outline: none !important;
+            border-radius: 50%;
+            &:after {
+                display: none;
+            }
+            .navbar-light & {
+                color: $navbar-light-color;
+                border: 1px solid $navbar-light-disabled-color;
+            }
+        }
+    }
+}
+
+
+.header-blur-light {
+    background: rgba($white, 0.10) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    &.headroom--not-top {
+        background: rgba($white, 0.80) !important;
+    }
+}
+
+
+// navbr link
+.main-header {
+    .navbar {
+        .nav-link {
+            font-weight: $nav-link-weight;
+        }
+    }
+}
