@@ -25,10 +25,6 @@ function App(){
   <HashRouter>
     <div className="wrapper">
       <Header />
-      {/*<Route path="/" exact={true} component={Home}></Route>*/}
-      {/*<Route path="/board" component={BoardMain}></Route>*/}
-      {/*<Route path="/board/view/:id" component={BoardView}></Route>*/}
-      {/*<Route path="/movie/detail/:id" component={Detail}></Route>*/}
       <Route path="/" exact={true} component={Search}></Route>
       <Route path="/view/:title" exact={true} component={View}></Route>
     </div>

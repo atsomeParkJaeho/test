@@ -15,16 +15,6 @@ const api = axios.create({
   }
 });
 
-// 더무비 api
-
-const api2 = axios.create({
-  baseURL: '/themovie',
-  headers:{
-    'api_key':'a5d1d820e06a9d4f3f6454da6e078d9d',
-    'language':'ko-KR'
-  }
-});
-
 // 네이버 api
 export const naverMoviesApi = {
   search: word => api.get('/v1/search/movie.json', {
@@ -35,12 +25,20 @@ export const naverMoviesApi = {
   })
 };
 
+// 더무비 api
+
+const api2 = axios.create({
+  baseURL: '/themovie'
+});
+
 
 
 export const theMovieApi = {
   search:word => api2.get('/3/search/movie',{
     params: {
-      query:word
+      query       : word,
+      api_key     : 'a5d1d820e06a9d4f3f6454da6e078d9d',
+      language    : 'ko-KR'
     }
   })
 }
