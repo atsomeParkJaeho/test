@@ -6,6 +6,15 @@ const SECRET_KEY = 'Hagnu1SX8I';
 // const ID_KEY = '';
 // const SECRET_KEY = '';
 
+const datToday = new Date();
+const year = datToday.getFullYear();
+const month = ('0' + (datToday.getMonth()+1)).slice(-2);
+const day =   ('0' + (datToday.getDate()-1)).slice(-2);
+const today = year + '' + month  + '' + day;
+
+console.log(today);
+
+
 const api = axios.create({
   baseURL: '/api',
   headers: {
@@ -26,13 +35,11 @@ export const naverMoviesApi = {
 };
 
 // 더무비 api
-
 const api2 = axios.create({
   baseURL: '/themovie'
 });
 
-
-
+// 더 무비 영화 검색 목록 출력
 export const theMovieApi = {
   search:word => api2.get('/3/search/movie',{
     params: {
@@ -42,6 +49,27 @@ export const theMovieApi = {
     }
   })
 }
+
+// 영화진흥위원회 api
+
+const kofic = axios.create({
+  baseURL: '/kofic'
+});
+
+// 영화 진흥위원회 일별 박스오피스 출력 목록
+export const koficApi = {
+  today:kofic.get('/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json', {
+    params: {
+      targetDt: '' + today + '',
+      key: '0aee6581103f5f0450c80174b42fcf6b',
+    }
+  })
+}
+
+console.log(koficApi);
+console.log(theMovieApi);
+
+
 
 
 

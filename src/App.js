@@ -1,13 +1,14 @@
 import React from 'react';
 import {HashRouter, Route} from 'react-router-dom';
-import BoardMain from "./routes/board/BoardMain";
-import BoardView from "./routes/board/BoardView";
-import Home from "./routes/Home";
-import Detail from "./routes/Detail";
 import Search from "./routes/Search"
-import View from "./components/View";
-import Navigation from "./components/Navigation";
 import Header from './components/Header';
+
+/* 이동페이지  */
+import View from        "./components/View";               // 상세 정보
+import Rating from      "./components/rating";             // 평점순
+import Types from       "./components/types";              // 장르별
+import Boxoffice from   "./components/boxoffice";          // 흥행순
+import ratingBoard from "./components/ranking";            // 랭킹순
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/css/theme.css';
@@ -25,8 +26,12 @@ function App(){
   <HashRouter>
     <div className="wrapper">
       <Header />
-      <Route path="/" exact={true} component={Search}></Route>
-      <Route path="/view/:title" exact={true} component={View}></Route>
+      <Route path="/"             exact={true} component={Search}></Route>
+      <Route path="/view/:title"  exact={true} component={View}></Route>
+      <Route path="/rating"       exact={true} component={Rating}></Route>
+      <Route path="/types"        exact={true} component={Types}></Route>
+      <Route path="/boxoffice"    exact={true} component={Boxoffice}></Route>
+      <Route path="/board"        exact={true} component={ratingBoard}></Route>
     </div>
   </HashRouter>
 

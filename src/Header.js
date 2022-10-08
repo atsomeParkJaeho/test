@@ -30,7 +30,7 @@ function Header() {
                         <span className="toggler-icon"></span>
                     </button>
                     <Collapse in={menuShow}>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div className="navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav m-auto">
                             <li className="nav-item dropdown">
                                 <a href="#" className="nav-link">현재상영작</a>
