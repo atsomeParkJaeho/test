@@ -31,6 +31,10 @@ function App(){
       <Route path="/rating"       exact={true} component={Rating}></Route>
       <Route path="/types"        exact={true} component={Types}></Route>
       <Route path="/boxoffice"    exact={true} component={Boxoffice}></Route>
+
+      <Route path="/boxoffice/K"  exact={true} component={Boxoffice}></Route>
+      <Route path="/boxoffice/F"  exact={true} component={Boxoffice}></Route>
+
       <Route path="/board"        exact={true} component={ratingBoard}></Route>
     </div>
   </HashRouter>

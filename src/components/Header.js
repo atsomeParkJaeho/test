@@ -16,7 +16,8 @@ function Header() {
 
     const [menuShow, menuClose] = useState(false);
 
-    
+    const Kmovie = 'K';
+    const Fmovie = 'F';
 
     return (
         <header className="main-header">
@@ -33,13 +34,13 @@ function Header() {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav m-auto">
                             <li className="nav-item dropdown">
-                                <a href="#" className="nav-link">현재상영작</a>
+                                <a className="nav-link">현재상영작</a>
                                 <div className="dropdown-menu dropdown-menu">
                                     <div className="">
                                         <div className="">
                                             <ul className="list-unstyled">
-                                                <li><Link to="" class="dropdown-item">국내영화</Link></li>
-                                                <li><Link to="" class="dropdown-item">해외영화</Link></li>
+                                                <li><Link to={{pathname:`/boxoffice/${Kmovie}`, state:{lanMovie:Kmovie}}} class="dropdown-item">국내영화</Link></li>
+                                                <li><Link to={{pathname:`/boxoffice/${Fmovie}`, state:{lanMovie:Fmovie}}} class="dropdown-item">해외영화</Link></li>
                                             </ul>
                                         </div>
                                     </div>
