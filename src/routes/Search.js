@@ -3,13 +3,22 @@ import axios from 'axios';
 import SearchMovie from '../components/SearchMovie';
 import "./Home.css";
 import "./Search.css";
-import {koficApi, naverMoviesApi, theMovieApi} from '../api';
 import {Link} from "react-router-dom";
+import {koficApi, theMovieApi} from "../api";
+import TodayBoxoffice from "../components/TodayBoxoffice";
+
+const datToday = new Date();
+const year = datToday.getFullYear();
+const month = ('0' + (datToday.getMonth()+1)).slice(-2);
+const day =   ('0' + (datToday.getDate()-1)).slice(-2);
+const today = year + '' + month  + '' + day;
+
 
 class Search extends React.Component {
   state = {
     isLoading: true,
-    movies: [],
+    movies: [],         // 검색영화 출력
+    todayBoxoffic :[],  // 검색영화 없을시 일별 박스오피스 출력
     value: "",
     name: ""
   };
@@ -20,39 +29,78 @@ class Search extends React.Component {
     const search = this.state.value;
 
     try {
-      if (search === "") {
-        // 일별 박스오피스
-        const {data:{boxOfficeResult:{dailyBoxOfficeList}}} = await koficApi.today;
-        this.setState({movies: dailyBoxOfficeList, isLoading: false});
+
+
+      if(search === "") {
+        // 영화 진흥위원회
+        axios.get('/atnode/api/UTIL_main.php',{
+          params:{
+            act_type:"today",
+          }
+        }).then((res) =>{
+          if(res) {
+            const {data:{boxOfficeResult:{dailyBoxOfficeList}}} = res;
+            this.setState({todayBoxoffic: dailyBoxOfficeList, isLoading: false});
+          }
+        });
+
 
       } else {
-        // 더무비 api
-        const {data:{results}} = await theMovieApi.search(search);
-        console.log('데이터 / '+ results[0].title);
-        this.setState({movies: results, isLoading: false});
+
+        axios.get('/atnode/api/UTIL_main.php',{
+          params:{
+            act_type:"search",
+            search:search
+          }
+        }).then((res) =>{
+          if(res) {
+            console.log(res);
+            const {data:{results}} = res;
+            this.setState({movies: results, isLoading: false});
+          }
+        });
+
       }
-    } 
+
+
+
+    }
+
+
     // 배포시 사용소스
     catch (error) {
-      console.log('에러코드 출력 : '+error);
-      const req = {re_search:search} // 검색어
-      // ============네이버============//
-      axios.get('http://127.0.0.1:80/api.php', {
-        re_search:search
-      }).then((res)=>{
 
-        if(res) {
-          alert("연결성공"+res.data.items);
-          console.log(search);
-          console.log(res.data);
-        }
-      });
-
-      // ============더무비=================//
+      if(search === "") {
+        // 영화 진흥위원회
+        axios.get('/atnode/api/UTIL_main.php',{
+          params:{
+            act_type:"today",
+          }
+        }).then((res) =>{
+          if(res) {
+            const {data:{boxOfficeResult:{dailyBoxOfficeList}}} = res;
+            this.setState({todayBoxoffic: dailyBoxOfficeList, isLoading: false});
+          }
+        });
 
 
-      // ============영화진흥위원회============//
-      
+      } else {
+
+        axios.get('/atnode/api/UTIL_main.php',{
+          params:{
+            act_type:"search",
+            search:search
+          }
+        }).then((res) =>{
+          if(res) {
+            console.log(res);
+            const {data:{results}} = res;
+            this.setState({movies: results, isLoading: false});
+          }
+        });
+
+      }
+
     }
   };
 
@@ -71,7 +119,7 @@ class Search extends React.Component {
   };
 
   render() {
-    const {movies, isLoading, name} = this.state;
+    const {movies, todayBoxoffic, isLoading, name} = this.state;
 
     return (<section className="">
       {
@@ -120,36 +168,27 @@ class Search extends React.Component {
                       {/*===============================출력 구간===========================*/}
 
                       {(this.state.value === '') ? (
-                          // 일별 박스오피스 출력
+                        // 일별 박스오피스 출력
                         <div className="row">
-                          {
-                            movies.map(list => (
-                              <div className="col-md-6 col-lg-3 mb-3">
-                                <div className="position-relative">
-                                  <div className="">
-                                    <img className="rounded" src="" title="" alt=""/>
-                                  </div>
-                                  <div className="pt-4">
-                                    <span className="small d-block">예매순위 : {list.rank}</span>
-                                    <span className="small d-block">개봉일 : {list.openDt}</span>
-                                    <span className="small d-block">관객수 : {list.audiAcc} 명</span>
-                                    <h5 className="pt-2">
-                                      <Link className="text-dark" to="">제목 : {list.movieNm}</Link>
-                                    </h5>
-                                    <p className="text-truncate"></p>
-                                    <button className="btn btn-sm btn-primary stretched-link" >더보기</button>
-                                  </div>
-                                </div>
-                              </div>
-                          ))}
+                          {todayBoxoffic.map(list => (
+                              <TodayBoxoffice
+                                  key={list.movieNm}
+                                  audiAcc={list.audiAcc}        /* 관객수 */
+                                  rank={list.rank}              /* 순위 */
+                                  openDt={list.openDt}        /* 개봉일 */
+                                  movieNm={list.movieNm}      /* 영화명 */
+                              />
+                              )
+                            )
+                          }
                         </div>
                       ) : (
                         <div className="row">
                         {/*// 검색 결과가 있을 경우*/}
                         {movies.map(movie=>(
-                          <div className="col-md-6 col-lg-3 mb-3">
+                          <div className="col-md-6 col-lg-3 col-6 mb-5">
                             <div className="position-relative">
-                              <div className="">
+                              <div className="img_box position-relative">
                                 <img className="rounded" src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`} title="" alt=""/>
                               </div>
                               <div className="pt-4">

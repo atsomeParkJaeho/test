@@ -16,15 +16,14 @@ function Header() {
 
     const [menuShow, menuClose] = useState(false);
 
-    
 
     return (
         <header className="main-header">
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <Link to="/" className="navbar-brand header-navbar-brand">
+                    <link onClick={history.push("/~")} className="navbar-brand header-navbar-brand">
                         <strong>KMP MOVIE DB</strong>
-                    </Link>
+                    </link>
 
                     <button className="navbar-toggler" onClick={()=> menuClose(!menuShow)} aria-controls="navbarSupportedContent" aria-expanded={menuShow}>
                         <span className="toggler-icon"></span>

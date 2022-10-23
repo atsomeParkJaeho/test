@@ -6,8 +6,6 @@ import axios from "axios";
 import search from "../routes/Search";
 
 function SearchMovie({id,release_date,title,poster_path,popularity}) {
-
-
   return (
     <div className="movie col-12 col-md-6 movie_tab">
        <Link to={{pathname:`/view/${title}`, state:{id,release_date,title,poster_path,popularity}}} >
