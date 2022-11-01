@@ -20,38 +20,30 @@ function View() {
 
     //================ 저장된 로컬스토리지 출력 ================
     const saved = JSON.parse(localStorage.getItem("movie_info"));
-    const {
-        id,
-        year,
-        title,
-        poster,
-        rating,
-        director,
-        actor
-    } = saved;
+    const {date, poster, rating, title} = saved;
 
     return(
         <div className="contents_wrap">
             <div className="row view_wrap">
                 <div className="col-md-6">
-                    <img src={poster} alt={title} style={{width:"100%"}}/>
+                    <img className="rounded" src={`http://image.tmdb.org/t/p/w500/${poster}`} title="" alt=""/>
                 </div>
                 <div className="col-md-6">
                     <div className="tit">
                         <p className="h25 fw-bold">
-                            {title.replace(/<b>/gi,"").replace(/<\/b>/gi,"")}
+                            {title}
                         </p>
                         <p className="h17">
                             <span>개봉연도 </span>
-                            {year}
+                            {date}
                         </p>
                         <p className="h17">
                             <span>감독</span>
-                            {director.replace(/\|/gi,", ")}
+                            {}
                         </p>
                         <p className="h17">
                             <span>배우</span>
-                            {actor.replace(/\|/gi,", ")}
+                            {}
                         </p>
                         <p className="h17">
                             <span>전세계 수익</span>
@@ -63,7 +55,7 @@ function View() {
                         </p>
                         <div className="rating mt-5">
                             <p className="h17">
-                                <span>네이버</span>
+                                <span>더무비 평점</span>
                                 {rating} 점
                             </p>
                             <p className="h17">

@@ -33,7 +33,7 @@ class Search extends React.Component {
 
       if(search === "") {
         // 영화 진흥위원회
-        axios.get('/atnode/api/UTIL_main.php',{
+        axios.get('/api/UTIL_main.php',{
           params:{
             act_type:"today",
           }
@@ -47,7 +47,7 @@ class Search extends React.Component {
 
       } else {
 
-        axios.get('/atnode/api/UTIL_main.php',{
+        axios.get('/api/UTIL_main.php',{
           params:{
             act_type:"search",
             search:search
@@ -72,7 +72,7 @@ class Search extends React.Component {
 
       if(search === "") {
         // 영화 진흥위원회
-        axios.get('/atnode/api/UTIL_main.php',{
+        axios.get('/api/UTIL_main.php',{
           params:{
             act_type:"today",
           }
@@ -86,7 +86,7 @@ class Search extends React.Component {
 
       } else {
 
-        axios.get('/atnode/api/UTIL_main.php',{
+        axios.get('/api/UTIL_main.php',{
           params:{
             act_type:"search",
             search:search

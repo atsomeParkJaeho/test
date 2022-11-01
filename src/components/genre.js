@@ -1,8 +1,8 @@
 import React from "react";
 
-function Types() {
+function Genre() {
     return(
         <>
         </>
     );
-} export default Types;
+} export default Genre;

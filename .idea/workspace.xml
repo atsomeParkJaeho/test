@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae2e05c9-a892-4f1c-b57b-abd541f7ea80" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/TopRating.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchMovie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchMovie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Search.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodayBoxoffice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodayBoxoffice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/View.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/View.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boxoffice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boxoffice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rating.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/genre.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupProxy.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +73,7 @@
       <workItem from="1666507624750" duration="292000" />
       <workItem from="1666508567568" duration="798000" />
       <workItem from="1666509423165" duration="1045000" />
+      <workItem from="1667210686753" duration="4589000" />
     </task>
     <servers />
   </component>

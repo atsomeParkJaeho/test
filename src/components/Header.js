@@ -65,8 +65,8 @@ function Header() {
                                         <div className="">
                                             <div className="">
                                                 <ul className="list-unstyled">
-                                                    <li><Link to="" class="dropdown-item">국내영화</Link></li>
-                                                    <li><Link to="" class="dropdown-item">해외영화</Link></li>
+                                                    <li><Link to={{pathname:`/rating/${Kmovie}`, state:{lanMovie:Kmovie}}} class="dropdown-item">국내영화</Link></li>
+                                                    <li><Link to={{pathname:`/rating/${Fmovie}`, state:{lanMovie:Fmovie}}} class="dropdown-item">해외영화</Link></li>
                                                 </ul>
                                             </div>
                                         </div>

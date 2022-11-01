@@ -6,7 +6,7 @@ import Header from './components/Header';
 /* 이동페이지  */
 import View from        "./components/View";               // 상세 정보
 import Rating from      "./components/rating";             // 평점순
-import Types from       "./components/types";              // 장르별
+import Genre from "./components/genre";              // 장르별
 import Boxoffice from   "./components/boxoffice";          // 흥행순
 import ratingBoard from "./components/ranking";            // 랭킹순
 
@@ -29,7 +29,9 @@ function App(){
       <Route path="/"             exact={true} component={Search}></Route>
       <Route path="/view/:title"  exact={true} component={View}></Route>
       <Route path="/rating"       exact={true} component={Rating}></Route>
-      <Route path="/types"        exact={true} component={Types}></Route>
+      <Route path="/rating/K"     exact={true} component={Rating}></Route>
+      <Route path="/rating/F"     exact={true} component={Rating}></Route>
+      <Route path="/genre"        exact={true} component={Genre}></Route>
       <Route path="/boxoffice"    exact={true} component={Boxoffice}></Route>
 
       <Route path="/boxoffice/K"  exact={true} component={Boxoffice}></Route>

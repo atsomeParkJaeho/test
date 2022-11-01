@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
+import TodayBoxoffice from "./TodayBoxoffice";
 
 function Boxoffice() {
 
@@ -21,7 +22,7 @@ function Boxoffice() {
     const [MovieList, setMovieList] = useState([]);
 
     useEffect(()=>{
-       axios.get('/atnode/api/UTIL_boxoffice.php',{
+       axios.get('/api/UTIL_boxoffice.php',{
            params:{
                act_type     :'movie_boxoffice',
                repNationCd  :lanMovie, // 국적 선택
@@ -71,22 +72,9 @@ function Boxoffice() {
                         </div>
                         <div className="row gy-4">
                             {/*===============반복문 구간===================*/}
-                            <div className="col-md-6 col-lg-3 wow fadeInUp">
-                                <div className="position-relative">
-                                    <div className="">
-                                        {/*이미지 추가 */}
-                                    </div>
-                                    <div className="pt-4">
-                                        <div className="small">예매순위 : 2022-10-22</div>
-                                        <div className="small">개봉일 : 2022-10-22</div>
-                                        <div className="small">누적관객수 : 565만</div>
-                                        <h5 className="pt-2 mb-5">
-                                            <a className="text-dark" href="#">제목 : 000</a>
-                                        </h5>
-                                        <a className="btn btn-sm btn-primary stretched-link" href="#">더 보기</a>
-                                    </div>
-                                </div>
-                            </div>
+                            {MovieList.map(list=>(
+                                <TodayBoxoffice key={list.movieNm} rank={list.rank} openDt={list.openDt} audiAcc={list.audiAcc} movieNm={list.movieNm}/>
+                            ))}
                             {/*=============반복문 구간 끝=====================*/}
                         </div>
                     </div>
@@ -126,22 +114,9 @@ function Boxoffice() {
                         </div>
                         <div className="row gy-4">
                             {/*===============반복문 구간===================*/}
-                            <div className="col-md-6 col-lg-3 wow fadeInUp">
-                                <div className="position-relative">
-                                    <div className="">
-                                        {/*이미지*/}
-                                    </div>
-                                    <div className="pt-4">
-                                        <div className="small">예매순위 : 2022-10-22</div>
-                                        <div className="small">개봉일 : 2022-10-22</div>
-                                        <div className="small">누적관객수 : 565만</div>
-                                        <h5 className="pt-2 mb-5">
-                                            <a className="text-dark" href="#">제목 : 000</a>
-                                        </h5>
-                                        <a className="btn btn-sm btn-primary stretched-link" href="#">더 보기</a>
-                                    </div>
-                                </div>
-                            </div>
+                            {MovieList.map(list=>(
+                                <TodayBoxoffice key={list.movieNm} rank={list.rank} openDt={list.openDt} audiAcc={list.audiAcc} movieNm={list.movieNm}/>
+                            ))}
                             {/*=============반복문 구간 끝=====================*/}
                         </div>
                     </div>
