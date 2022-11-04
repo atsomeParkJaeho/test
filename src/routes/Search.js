@@ -33,7 +33,7 @@ class Search extends React.Component {
 
       if(search === "") {
         // 영화 진흥위원회
-        axios.get('/api/UTIL_main.php',{
+        axios.get('/atnode/api/UTIL_main.php',{
           params:{
             act_type:"today",
           }
@@ -47,7 +47,7 @@ class Search extends React.Component {
 
       } else {
 
-        axios.get('/api/UTIL_main.php',{
+        axios.get('/atnode/api/UTIL_main.php',{
           params:{
             act_type:"search",
             search:search
@@ -128,25 +128,27 @@ class Search extends React.Component {
             <span className="loader__text">Loading..{this.state.name}</span>
           </div>)
           : (
+          <div className="wrapper">
+              <form onSubmit={this.handleSubmit}>
+              <section className="bg-primary effect-section page-heading py-10">
+                  <div className="mask bg-primary opacity-8"></div>
+                  <div className="container position-relative">
+                      <div className="row justify-content-center">
+                          <div className="col-lg-8 text-center">
+                              <h2 className="text-white h1 mb-4">KMP MOVIE DB</h2>
 
-          <form onSubmit={this.handleSubmit}>
-            <div className='content_wrap'>
-                <div className="input_div bg-primary main_search">
-                  <div className="px-3">
-                      <h1 className='h55 search_title'>KMP MOVIE DB</h1>
-                      <div className='search_box'>
-                          <div className='input-group'>
-                            <input className="form-control" type="text" onChange={this.handleChange} placeholder="영화를 검색해 보세요."/>
-                            <a href="" className='btn btn-dark'>검색</a>
+                              <div className='input-group'>
+                                  <input className="form-control" type="text" onChange={this.handleChange} placeholder="영화를 검색해 보세요."/>
+                                  <a href="" className='btn btn-dark'>검색</a>
+                              </div>
+
                           </div>
                       </div>
                   </div>
-                </div>
-                {/*반복문 구간*/}
-                <section className="section bg-gray-100">
-                    <div className="container">
+              </section>
+              <section className="section">
 
-
+                  <div className="container">
                       {(this.state.value === '') ? (
                           <div className="row section-heading justify-content-center text-center">
                             <div className="col-lg-8 col-xl-7">
@@ -163,14 +165,10 @@ class Search extends React.Component {
                           </div>
                       )}
 
-
-
-                      {/*===============================출력 구간===========================*/}
-
+                      {/*반복문 구간*/}
                       {(this.state.value === '') ? (
-                        // 일별 박스오피스 출력
-                        <div className="row">
-                          {todayBoxoffic.map(list => (
+                          <div className="row">
+                            {todayBoxoffic.map(list=>(
                               <TodayBoxoffice
                                   key={list.movieNm}
                                   audiAcc={list.audiAcc}        /* 관객수 */
@@ -178,40 +176,39 @@ class Search extends React.Component {
                                   openDt={list.openDt}        /* 개봉일 */
                                   movieNm={list.movieNm}      /* 영화명 */
                               />
-                              )
-                            )
-                          }
-                        </div>
-                      ) : (
-                        <div className="row">
-                        {/*// 검색 결과가 있을 경우*/}
-                        {movies.map(movie=>(
-                          <div className="col-md-6 col-lg-3 col-6 mb-5">
-                            <div className="position-relative">
-                              <div className="img_box position-relative">
-                                <img className="rounded" src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`} title="" alt=""/>
-                              </div>
-                              <div className="pt-4">
-                                <span className="small">개봉일 : {movie.release_date}</span>
-                                <h5 className="pt-2">
-                                  <Link className="text-dark" to="">제목 : {movie.title}</Link>
-                                </h5>
-                                <p className="text-truncate">{movie.overview}</p>
-                                <button className="btn btn-sm btn-primary stretched-link" >더보기</button>
-                              </div>
-                            </div>
+                            ))}
                           </div>
-                          ))}
-                      </div>
+                      ) : (
+                          <div className="row">
+                            {movies.map(movie=>(
+                              <div className="col-md-6 col-lg-4 mb-5">
+                                <div className="hover-top card shadow-only-hover">
+                                  <div className="img_box position-relative">
+                                    <img className="rounded" src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`} title="" alt=""/>
+                                  </div>
+                                  <div className="card-body p-3">
+                                    <h5 className="mb-3">
+                                      <Link className="text-dark stretched-link" to="#">
+                                        {movie.title}
+                                      </Link>
+                                    </h5>
+                                    <p className="text-truncate">{movie.overview}</p>
+                                    <div className="nav small border-top pt-3">
+                                      <Link className="me-2 text-body" to="#"><i className="bi-calendar me-1"></i>개봉일 : {movie.release_date}</Link>
+                                      <Link className="text-body fw-600 ms-auto" to="#">더보기<i className="bi-chevron-right"></i></Link>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
                       )}
-                      {/*===============================출력 구간===========================*/}
-                    </div>
-                </section>
+                      {/*반복문 구간 끝*/}
 
-                {/*반복문 구간 끝*/}
-
-            </div>
-          </form>
+                  </div>
+              </section>
+              </form>
+          </div>
             )
       }
     </section>);

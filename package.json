@@ -49,5 +49,6 @@
   "devDependencies": {
     "axios": "^0.21.1"
   },
-  "homepage": "./"
+  "homepage": "./",
+  "proxy": "http://atnode.atsomedemo.com"
 }
