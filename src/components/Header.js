@@ -43,18 +43,14 @@ function Header() {
                     <Link to="/" className="navbar-brand header-navbar-brand">
                         <strong>KMP MOVIE DB</strong>
                     </Link>
-
                     <button className="navbar-toggler">
                         <span className="toggler-icon"></span>
                     </button>
-
-
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav m-auto">
                             <li className="nav-item dropdown">
                                 <a className="nav-link">현재상영작</a>
                                 <label className="px-dropdown-toggle mob-menu bi bi-chevron-down open"></label>
-
                                 <div className="dropdown-menu dropdown-menu">
                                     <div className="">
                                         <div className="">
@@ -65,12 +61,10 @@ function Header() {
                                         </div>
                                     </div>
                                 </div>
-
                             </li>
                             <li className="nav-item dropdown">
                                 <Link to="/rating" className="nav-link">평점순</Link>
                                 <label className="px-dropdown-toggle mob-menu bi bi-chevron-down open"></label>
-
                                 <div className="dropdown-menu dropdown-menu">
                                     <div className="">
                                         <div className="">
@@ -81,10 +75,9 @@ function Header() {
                                         </div>
                                     </div>
                                 </div>
-
                             </li>
                             <li className="nav-item dropdown">
-                                <Link to="/types" className="nav-link">장르별</Link>
+                                <Link to="/genre" className="nav-link">장르별</Link>
                                 <label className="px-dropdown-toggle mob-menu bi bi-chevron-down open"></label>
 
                                 <div className="dropdown-menu dropdown-menu">
@@ -111,7 +104,6 @@ function Header() {
                             <li className="nav-item dropdown">
                                 <Link to="/boxoffice" className="nav-link">수익별</Link>
                                 <label className="px-dropdown-toggle mob-menu bi bi-chevron-down open"></label>
-
                                 <div className="dropdown-menu dropdown-menu">
                                     <div className="">
                                         <div className="">
@@ -122,12 +114,10 @@ function Header() {
                                         </div>
                                     </div>
                                 </div>
-
                             </li>
                             <li className="nav-item dropdown">
                                 <Link to="/board" className="nav-link">KMP평점</Link>
                                 <label className="px-dropdown-toggle mob-menu bi bi-chevron-down open"></label>
-
                                 <div className="dropdown-menu dropdown-menu">
                                     <div className="">
                                         <div className="">
