@@ -5,7 +5,7 @@ import "./Home.css";
 import "./Search.css";
 import {Link} from "react-router-dom";
 import {koficApi, theMovieApi} from "../api";
-import TodayBoxoffice from "../components/TodayBoxoffice";
+import TodayBoxoffice from "../boxoffice/TodayBoxoffice";
 
 const datToday = new Date();
 const year = datToday.getFullYear();

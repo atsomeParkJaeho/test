@@ -13,6 +13,12 @@ function Genre() {
     if(inputValue) {
         localStorage.setItem("Genre",JSON.stringify(inputValue));
     }
+
+    //================ 저장된 로컬스토리지 출력 ================
+    const saved = JSON.parse(localStorage.getItem("Genre"));
+    const {genre_id} = saved;
+
+
     // 1. 장르별 데이터 불러오기 설정
     // 2. 클릭시 해당 장르값 데이터 불러오기 액션 구현
     // 3. 장르 코드값 너기
@@ -20,8 +26,9 @@ function Genre() {
     // 클릭시 해당장르 출력 구현
 
     const goGenre = Ids => {
-        setGenresIds(Ids);
-        alert('추출 완료');
+        const click_ids = {genre_id:Ids}
+        localStorage.setItem("Genre",JSON.stringify(click_ids));
+        window.location.reload();
     }
     // 클릭한 장르 외부로 추출
     const [GenresIds, setGenresIds] = useState([]);
@@ -32,7 +39,7 @@ function Genre() {
         axios.get('/atnode/api/UTIL_genres.php',{
             params:{
                 act_type    :"genres",      // 장르별로 가져오기
-                genres_ids  :"28"           // 해당장르 아이디를 넣는다
+                genres_ids  :genre_id           // 해당장르 아이디를 넣는다
             }
         }).then((res)=>{
             if(res) {
@@ -54,7 +61,7 @@ function Genre() {
                     <ul className="d-flex">
                         {Genre_ids.map(cate=>(
                         <li>
-                             <button to="/genre" onClick={()=>goGenre(cate.id)} className="d-block text-dark px-3 py-2">{cate.name}</button>
+                             <button to="/genre" onClick={()=>goGenre(cate.id)} className="d-block text-nowrap bg-white border text-dark px-3 py-2">{cate.name}</button>
                         </li>
                         ))}
                     </ul>
@@ -68,7 +75,7 @@ function Genre() {
                         <div className='search_box'>
                             <div className='input-group'>
                                 <input className="form-control" type="text" placeholder="영화를 검색해 보세요."/>
-                                <a href="" className='btn btn-dark'>검색</a>
+                                <a href="src/genre/genre" className='btn btn-dark'>검색</a>
                             </div>
                         </div>
                     </div>

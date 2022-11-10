@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Link, Route} from 'react-router-dom';
 import PropTypes from "prop-types";
-import './Search.css';
+import '../components/Search.css';
 import axios from "axios";
 import search from "../routes/Search";
 

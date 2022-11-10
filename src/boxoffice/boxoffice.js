@@ -53,7 +53,7 @@ function Boxoffice() {
                                 <div className='search_box'>
                                     <div className='input-group'>
                                         <input className="form-control" type="text" placeholder="영화를 검색해 보세요."/>
-                                        <a href="" className='btn btn-dark'>검색</a>
+                                        <a href="src/boxoffice/boxoffice" className='btn btn-dark'>검색</a>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@ function Boxoffice() {
                             <div className='search_box'>
                                 <div className='input-group'>
                                     <input className="form-control" type="text" placeholder="영화를 검색해 보세요."/>
-                                    <a href="" className='btn btn-dark'>검색</a>
+                                    <a href="src/boxoffice/boxoffice" className='btn btn-dark'>검색</a>
                                 </div>
                             </div>
                         </div>

@@ -2,34 +2,24 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import '../css/style.css'
-import {Collapse} from "react-bootstrap";
 
 function Header() {
-    let [scrollPosition, setScrollPosition] = useState(0); // 스크롤 0 설정
-    let updateScroll = () => { // 스크롤 상태 불러오기
-        setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-    }
-
-    useEffect(()=> {
-        window.addEventListener('scroll',updateScroll);
-    });
-
     const Kmovie = 'K';
     const Fmovie = 'F';
 
     return (
         <header className="main-header">
-            {/*모바일*/}
-            <div className="mo_header d-md-none">
+            {/*=========================모바일=========================*/}
+            <div className="mo_header d-lg-none">
                 <div className="text-center border-bottom p-3">
-                    <p className="h25 fw-bold m-0">KMP MOVIE DB</p>
+                    <p className="h25 fw-bold m-0"><Link to="/">KMP MOVIE DB</Link></p>
                 </div>
                 {/*1차 카테고리*/}
                 <div className="overflow-auto">
                     <ul className="d-flex">
-                        <li><Link to="" className="d-block text-dark px-3 py-2">현재상영작</Link></li>
-                        <li><Link to="" className="d-block text-dark px-3 py-2">평점순</Link></li>
-                        <li><Link to="" className="d-block text-dark px-3 py-2">장르별</Link></li>
+                        <li><Link to={{pathname:`/boxoffice/${Kmovie}`, state:{lanMovie:Kmovie}}} className="d-block text-dark px-3 py-2">현재상영작</Link></li>
+                        <li><Link to={{pathname:`/rating/${Kmovie}`,    state:{lanMovie:Kmovie}}} className="d-block text-dark px-3 py-2">평점순</Link></li>
+                        <li><Link to={{pathname:`/genre`,               state:{genre_id:"12"}}} className="d-block text-dark px-3 py-2">장르별</Link></li>
                         <li><Link to="" className="d-block text-dark px-3 py-2">수익별</Link></li>
                         <li><Link to="" className="d-block text-dark px-3 py-2">KMP평점</Link></li>
                         <li><Link to="" className="d-block text-dark px-3 py-2">랭킹별</Link></li>
@@ -37,8 +27,8 @@ function Header() {
                 </div>
                 {/*2차 카테고리*/}
             </div>
-            {/*pc*/}
-            <nav className="navbar navbar-expand-lg d-md-block d-none">
+            {/*=======================pc========================*/}
+            <nav className="navbar navbar-expand-lg d-lg-block d-none">
                 <div className="container">
                     <Link to="/" className="navbar-brand header-navbar-brand">
                         <strong>KMP MOVIE DB</strong>
