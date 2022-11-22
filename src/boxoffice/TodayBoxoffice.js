@@ -11,7 +11,7 @@ function TodayBoxoffice({rank,openDt,audiAcc,movieNm,overview}) {
 
   // =========================== 포스터 추출 ==========================//
   useEffect(()=>{
-    axios.get('/atnode/api/UTIL_main.php',{
+    axios.get('/api/UTIL_main.php',{
       params:{
         act_type  : "poster",
         search    : movieNm

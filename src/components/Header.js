@@ -4,6 +4,50 @@ import {Link} from 'react-router-dom';
 import '../css/style.css'
 
 function Header() {
+    
+    // ===========현재상영작==============
+    const goBoxoffice = (uid) => {
+        sessionStorage.setItem('search_uid',uid);
+        window.location.href = '/boxoffice/'+uid;
+        return;
+    }
+
+    // ============평점순===========
+    const goRating = (uid) => {
+        sessionStorage.setItem('search_uid',uid);
+        window.location.href = '/rating/'+uid;
+        return;
+    }
+    // ============장르별===========
+    const goGenre = (uid) => {
+        sessionStorage.setItem('search_uid',uid);
+        window.location.href = '/genre';
+        return;
+    }
+    // =============수익별==============
+    const goGross = (uid) => {
+        sessionStorage.setItem('search_uid',uid);
+        window.location.href = '/gross/'+uid;
+        return;
+    }
+
+
+    // =============KMP================
+    const goKmp = (uid) => {
+        sessionStorage.setItem('search_uid',uid);
+        window.location.href = '/kmp/'+uid;
+        return;
+    }
+
+
+    // ============랭킹별================
+    const goRank = (uid) => {
+        sessionStorage.setItem('search_uid',uid);
+        window.location.href = '/ranking/'+uid;
+        return;
+    }
+    
+    
     const Kmovie = 'K';
     const Fmovie = 'F';
 
@@ -17,12 +61,49 @@ function Header() {
                 {/*1차 카테고리*/}
                 <div className="overflow-auto">
                     <ul className="d-flex">
-                        <li><Link to={{pathname:`/boxoffice/${Kmovie}`, state:{lanMovie:Kmovie}}} className="d-block text-dark px-3 py-2">현재상영작</Link></li>
-                        <li><Link to={{pathname:`/rating/${Kmovie}`,    state:{lanMovie:Kmovie}}} className="d-block text-dark px-3 py-2">평점순</Link></li>
-                        <li><Link to={{pathname:`/genre`,               state:{genre_id:"12"}}} className="d-block text-dark px-3 py-2">장르별</Link></li>
-                        <li><Link to="" className="d-block text-dark px-3 py-2">수익별</Link></li>
-                        <li><Link to="" className="d-block text-dark px-3 py-2">KMP평점</Link></li>
-                        <li><Link to="" className="d-block text-dark px-3 py-2">랭킹별</Link></li>
+                        <li>
+                            <Link
+                                to="/boxoffice/K"
+                                onClick={()=>goBoxoffice(`K`)}
+                                className="d-block text-dark px-3 py-2">현재상영작
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/rating/K"
+                                onClick={()=>goRating(`K`)}
+                                className="d-block text-dark px-3 py-2">
+                                평점순
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/genre"
+                                onClick={()=>goGenre(`23`)}
+                                className="d-block text-dark px-3 py-2">
+                                장르별
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/gross/K"
+                                onClick={()=>goGross(`K`)}
+                                className="d-block text-dark px-3 py-2">
+                                수익별
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/kmp/K"
+                                  onClick={()=>goKmp(`K`)}
+                                  className="d-block text-dark px-3 py-2">
+                                KMP평점
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/ranking/K"
+                                  onClick={()=>goRank(`K`)}
+                                  className="d-block text-dark px-3 py-2">랭킹별</Link>
+                        </li>
                     </ul>
                 </div>
                 {/*2차 카테고리*/}

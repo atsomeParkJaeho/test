@@ -50,5 +50,5 @@
     "axios": "^0.21.1"
   },
   "homepage": "./",
-  "proxy": "http://atnode.atsomedemo.com"
+  "proxy"   : "http://atnode.atsomedemo.com"
 }
