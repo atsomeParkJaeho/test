@@ -70,7 +70,17 @@ console.log(koficApi);
 console.log(theMovieApi);
 
 
+// 테스트
 
+axios.get('/atnode/api/UTIL_movie_gross.php',{
+  params:{
+    act_type:"movie_gross",
+  }
+}).then((res)=>{
+  if(res) {
+    console.log(res.data);
+  }
+});
 
 
 

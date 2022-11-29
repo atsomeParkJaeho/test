@@ -50,6 +50,8 @@ function App(){
               <Route path="/genre"        exact={true} component={Genre}></Route>
               {/*=================수익별==================*/}
               <Route path="/gross"        exact={true} component={Gross}></Route>
+              <Route path="/gross/K"        exact={true} component={Gross}></Route>
+              <Route path="/gross/F"        exact={true} component={Gross}></Route>
               {/*=================KMP평점==================*/}
               <Route path="/kmp"          exact={true} component={Kmp}></Route>
               {/*=================랭킹별==================*/}

@@ -4,20 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae2e05c9-a892-4f1c-b57b-abd541f7ea80" name="변경" comment="장르별 검색">
-      <change afterPath="$PROJECT_DIR$/src/gross/Gross.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kmp/Kmp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ranking/Ranking.js" afterDir="false" />
+    <list default="true" id="ae2e05c9-a892-4f1c-b57b-abd541f7ea80" name="변경" comment="페이지 변경">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/boxoffice/TodayBoxoffice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/boxoffice/TodayBoxoffice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/boxoffice/boxoffice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/boxoffice/boxoffice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodayBoxoffice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/boxoffice/TodayBoxoffice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodayBoxoffice_backup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/boxoffice/TodayBoxoffice_backup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopRating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rating/TopRating.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/genre/genre.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/genre/genre.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gross/Gross.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/gross/Gross.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rating/rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rating/rating.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupProxy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Search_backup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Search_backup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -42,24 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/kmp_movie_2/src/components&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/kmp_movie_2/src/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\kmp_movie_2\src\components" />
@@ -67,6 +61,11 @@
       <recent name="C:\Users\user\Documents\kmp_movie\src\routes" />
       <recent name="C:\Users\user\Documents\kmp_movie\src\components" />
       <recent name="C:\Users\user\Documents\kmp_movie\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\kmp_movie_3\src\rating" />
+      <recent name="D:\kmp_movie_3\src\genre" />
+      <recent name="D:\kmp_movie_3\src\boxoffice" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
@@ -91,8 +90,7 @@
       <workItem from="1667210686753" duration="4589000" />
       <workItem from="1667265231499" duration="108000" />
       <workItem from="1667552366770" duration="5131000" />
-      <workItem from="1668506963310" duration="4227000" />
-      <workItem from="1669112011574" duration="3381000" />
+      <workItem from="1668085582151" duration="1528000" />
     </task>
     <task id="LOCAL-00001" summary="페이지 변경">
       <created>1667265312716</created>

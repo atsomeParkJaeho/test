@@ -2,23 +2,25 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import TopRating from "./TopRating";
+import Header from "../components/Header";
 
 
 function Rating() {
-
-   console.log('평점순');
-
-    // 로컬 스토리지 저장
-    const histtory = useHistory();
-    const inputValue = histtory.location.state;
-
-    if(inputValue) {
-        localStorage.setItem("Rating",JSON.stringify(inputValue));
+    const nowUrl = window.location.pathname;
+    if(nowUrl == '/rating/K') {
+        sessionStorage.setItem('search_uid','K');
     }
-
-    //================ 저장된 로컬스토리지 출력 ================
-    const saved = JSON.parse(localStorage.getItem("Rating"));
-    const {lanMovie} = saved;
+    if(nowUrl == '/rating/F') {
+        sessionStorage.setItem('search_uid','F');
+    }
+   console.log('평점순');
+   const lanMovie =  sessionStorage.getItem('search_uid');
+    // 2. 해당 평점 사이트로 이동
+    const goSearch = (uid) => {
+        sessionStorage.setItem('search_uid',uid);
+        window.location.href = '/rating/'+uid;
+        return;
+    }
 
 
    const [ViewRating, setViewRating] = useState([]);
@@ -38,33 +40,47 @@ function Rating() {
            }
        });
    },[]);
-   
 
-   if(lanMovie == 'K') {
-       return(
-           <>
-               {/*검색창*/}
+   const tit = (lanMovie === 'K') ? '국내영화':'해외영화';
+   return(
+       <>
 
-               <div className="input_div bg-primary py-10">
-                   <div className="container">
-                       <div className="px-3 d-flex justify-content-between align-items-center">
-                           <h1 className='h35 search_title mb-0 pb-0'>KMP MOVIE DB</h1>
-                           <div className='search_box'>
-                               <div className='input-group'>
-                                   <input className="form-control" type="text" placeholder="영화를 검색해 보세요."/>
-                                   <a href="src/rating/rating" className='btn btn-dark'>검색</a>
-                               </div>
-                           </div>
-                       </div>
+           <Header/>
+           {/*검색창*/}
+
+           {/*<div className="input_div bg-primary py-10">*/}
+           {/*    <div className="container">*/}
+           {/*        <div className="px-3 d-flex justify-content-between align-items-center">*/}
+           {/*            <h1 className='h35 search_title mb-0 pb-0'>KMP MOVIE DB</h1>*/}
+           {/*            <div className='search_box'>*/}
+           {/*                <div className='input-group'>*/}
+           {/*                    <input className="form-control" type="text" placeholder="영화를 검색해 보세요."/>*/}
+           {/*                    <a href="src/rating/rating" className='btn btn-dark'>검색</a>*/}
+           {/*                </div>*/}
+           {/*            </div>*/}
+           {/*        </div>*/}
+           {/*    </div>*/}
+           {/*</div>*/}
+
+           {/*검색창끝*/}
+           <div className="wrapper">
+               <div className="d-md-none">
+                   <div className="overflow-auto">
+                       <ul className="d-flex">
+                           <li>
+                               <button onClick={()=>goSearch(`K`)} className="d-block text-nowrap bg-white border text-dark px-3 py-2">국내영화</button>
+                           </li>
+                           <li>
+                               <button onClick={()=>goSearch(`F`)} className="d-block text-nowrap bg-white border text-dark px-3 py-2">해외영화</button>
+                           </li>
+                       </ul>
                    </div>
                </div>
-
-               {/*검색창끝*/}
                <section className="section">
                    <div className="container">
                        <div className="row section-heading justify-content-center text-center  wow fadeInUp">
                            <div className="col-lg-8 col-xl-6">
-                               <h3 className="h1 bg-primary-after after-50px pb-3 mb-3">평점순위 (국내영화)</h3>
+                               <h3 className="h1 bg-primary-after after-50px pb-3 mb-3">평점순위 ({tit})</h3>
                                <div className="lead">전날 기준입니다.
                                </div>
                            </div>
@@ -85,48 +101,10 @@ function Rating() {
                        </div>
                    </div>
                </section>
-           </>
-       );
-   } else if(lanMovie == 'F') {
-       return (
-           <>
-               {/*검색창*/}
+           </div>
 
-               <div className="input_div bg-primary py-10">
-                   <div className="container">
-                       <div className="px-3 d-flex justify-content-between align-items-center">
-                           <h1 className='h35 search_title mb-0 pb-0'>KMP MOVIE DB</h1>
-                           <div className='search_box'>
-                               <div className='input-group'>
-                                   <input className="form-control" type="text" placeholder="영화를 검색해 보세요."/>
-                                   <a href="src/rating/rating" className='btn btn-dark'>검색</a>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
+       </>
+   );
 
-               {/*검색창끝*/}
-               <section className="section">
-                   <div className="container">
-                       <div className="row section-heading justify-content-center text-center  wow fadeInUp">
-                           <div className="col-lg-8 col-xl-6">
-                               <h3 className="h1 bg-primary-after after-50px pb-3 mb-3">평점순위 순위 (해외영화)</h3>
-                               <div className="lead">전날 기준입니다.
-                               </div>
-                           </div>
-                       </div>
-                       <div className="row gy-4">
-                           {/*===============반복문 구간===================*/}
-                           {ViewRating.map(list=>(
-                               <TopRating key={list.id} title={list.title} poster={list.poster_path} date={list.release_date} rating={list.vote_average}  />
-                           ))}
-                           {/*=============반복문 구간 끝=====================*/}
-                       </div>
-                   </div>
-               </section>
-           </>
-       );
-   }
 
 } export default  Rating;
