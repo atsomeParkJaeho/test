@@ -65,21 +65,7 @@ function Boxoffice() {
                         </ul>
                     </div>
                 </div>
-                {/*검색창*/}
-                {/*<div className="input_div bg-primary py-10">*/}
-                {/*    <div className="container">*/}
-                {/*        <div className="px-3 d-flex justify-content-between align-items-center">*/}
-                {/*            <h1 className='h35 search_title mb-0 pb-0'>KMP MOVIE DB</h1>*/}
-                {/*            <div className='search_box'>*/}
-                {/*                <div className='input-group'>*/}
-                {/*                    <input className="form-control" type="text" placeholder="영화를 검색해 보세요."/>*/}
-                {/*                    <a href="src/boxoffice/boxoffice" className='btn btn-dark'>검색</a>*/}
-                {/*                </div>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-                {/*검색창끝*/}
+
                 <section className="section">
                     <div className="container">
                         <div className="row section-heading justify-content-center text-center  wow fadeInUp">

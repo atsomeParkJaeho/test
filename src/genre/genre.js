@@ -1,17 +1,14 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {Link, useHistory} from "react-router-dom";
 import {Genre_ids} from "../codeset/genrecode";
 import Header from "../components/Header";
+import {Link} from "react-router-dom";
 
 
 function Genre() {
 
     console.log('장르별 검색');
-
     const genre_id = sessionStorage.getItem('search_uid');
-
-
     const goSearch = (uid) => {
         sessionStorage.setItem('search_uid',uid);
         window.location.reload();
@@ -33,6 +30,8 @@ function Genre() {
             }
         });
     },[]);
+
+    console.log(Genre);
 
     return(
         <>
@@ -60,32 +59,36 @@ function Genre() {
                                 </div>
                             </div>
                         </div>
-                        <div className="row gy-4">
-                            {/*===============반복문 구간===================*/}
-                            {Genre.map(items=>(
-                                <div className="col-md-6 col-lg-4 mb-5">
-                                    <div className="hover-top card shadow-only-hover">
-                                        <div className="img_box position-relative">
-                                            <img className="rounded" src={`http://image.tmdb.org/t/p/w500/${items.poster_path}`} title="" alt=""/>
-                                        </div>
-                                        <div className="card-body p-3">
-                                            <label className="small mb-2">예매순위 {}</label>
-                                            <h5 className="mb-3">
-                                                <Link className="text-dark stretched-link d-block text-truncate" to="#">
-                                                    {items.title}
-                                                </Link>
-                                            </h5>
-                                            <p></p>
-                                            <div className="nav small border-top pt-3">
-                                                <Link className="me-2 text-body" to="#"><i className="bi-calendar me-1"></i>개봉일 : {}</Link>
-                                                <Link className="text-body fw-600 ms-auto" to="#">더보기<i className="bi-chevron-right"></i></Link>
+                        <div className="row">
+                            {(Genre) ? (
+                                <>
+                                    {Genre.map(val=>(
+                                    <div className="col-md-6 col-lg-4 mb-5">
+                                        <div className="hover-top card shadow-only-hover">
+                                            <div className="img_box position-relative">
+                                                <img className="rounded" src={`http://image.tmdb.org/t/p/w500/${val.poster_path}`} title="" alt=""/>
+                                            </div>
+                                            <div className="card-body p-3">
+
+                                                <h5 className="mb-3">
+                                                    <Link className="text-dark stretched-link d-block text-truncate" to="#">
+                                                        {val.title}
+                                                    </Link>
+                                                </h5>
+                                                <p></p>
+                                                <div className="nav small border-top pt-3">
+                                                    <Link className="me-2 text-body" to="#"><i className="bi-calendar me-1"></i>개봉일 : {val.release_date}</Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                    ))}
+                                </>
+                            ):(
+                                <>
+                                </>
+                            )}
 
-                            {/*=============반복문 구간 끝=====================*/}
                         </div>
                     </div>
                 </section>
