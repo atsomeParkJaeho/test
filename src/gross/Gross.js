@@ -6,17 +6,24 @@ import GrossItems from "./GrossItems";
 
 function Gross() {
 
-    const country = sessionStorage.getItem('search_uid');
 
+    const country = sessionStorage.getItem('search_uid');
+    const goSearch = (uid) => {
+        sessionStorage.setItem('search_uid',uid);
+        window.location.reload();
+        return;
+    }
 
     console.log('수익별');
     const [Gross, setGross] = useState([]);  // 리스트 출력
+
+
 
     useEffect(()=>{
         axios.get('/api/UTIL_movie_gross.php',{
             params:{
                 act_type:"movie_gross",
-                country :"F",
+                country :country,
             }
         }).then((res)=>{
             if(res) {
@@ -31,7 +38,18 @@ function Gross() {
         <>
             <Header/>
             <div className="wrapper">
-
+                <div className="d-md-none">
+                    <div className="overflow-auto">
+                        <ul className="d-flex">
+                            <li>
+                                <button onClick={()=>goSearch(`K`)} className="d-block text-nowrap bg-white border text-dark px-3 py-2">국내영화</button>
+                            </li>
+                            <li>
+                                <button onClick={()=>goSearch(`F`)} className="d-block text-nowrap bg-white border text-dark px-3 py-2">해외영화</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 {/*==================영화 출력 리스트============*/}
                 <section className="section">
                     <div className="container">
@@ -45,16 +63,24 @@ function Gross() {
                         <div className="row gy-4">
                             {/*===============반복문 구간===================*/}
                             <div>
-                                {Gross.map(val=>(
-                                    <GrossItems
-                                    movie_rank           ={val.movie_rank}         // 순위
-                                    movie_year           ={val.movie_year}         // 개봉년도
-                                    movie_release_group  ={val.movie_release_group}        // 영화제목
-                                    movie_domestic       ={val.movie_domestic}        // 북미수익
-                                    movie_foreign        ={val.movie_foreign}        // 해외수익
-                                    movie_world_wide     ={val.movie_world_wide}
-                                    />
-                                ))}
+                                {(Gross) ? (
+                                    <>
+                                        {Gross.map(val=>(
+                                            <GrossItems
+                                                movie_rank           ={val.movie_rank}         // 순위
+                                                movie_year           ={val.movie_year}         // 개봉년도
+                                                movie_release_group  ={val.movie_release_group}        // 영화제목
+                                                movie_domestic       ={val.movie_domestic}        // 북미수익
+                                                movie_foreign        ={val.movie_foreign}        // 해외수익
+                                                movie_world_wide     ={val.movie_world_wide}
+                                            />
+                                        ))}
+                                    </>
+                                ):(
+                                    <>
+                                    </>
+                                )}
+
                             </div>
                             {/*=============반복문 구간 끝=====================*/}
                         </div>
