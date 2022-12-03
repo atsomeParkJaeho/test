@@ -2,7 +2,9 @@ import React, {useEffect} from "react";
 import Header from "../components/Header";
 import {useState} from "react";
 import axios from "axios";
-import GrossItems from "./GrossItems";
+import FGrossItems from "./FGrossItems";
+import {Link} from "react-router-dom";
+import KGrossItems from "./KGrossItems";
 
 function Gross() {
 
@@ -66,7 +68,7 @@ function Gross() {
                                 {(Gross) ? (
                                     <>
                                         {Gross.map(val=>(
-                                            <GrossItems
+                                            <FGrossItems
                                                 movie_rank           ={val.movie_rank}         // 순위
                                                 movie_year           ={val.movie_year}         // 개봉년도
                                                 movie_release_group  ={val.movie_release_group}        // 영화제목
@@ -78,6 +80,15 @@ function Gross() {
                                     </>
                                 ):(
                                     <>
+                                        {Gross.map(val=>(
+                                            <KGrossItems
+                                                movie_rank={}
+                                                movie_title={}
+                                                movie_open_date={}
+                                                movie_gross={}
+                                                movie_audience={}
+                                            />
+                                        ))}
                                     </>
                                 )}
 
